@@ -316,6 +316,18 @@ input:focus-visible {
   font-weight: 700;
 }
 
+.nav-item-prototype small {
+  margin-left: auto;
+  color: var(--muted-2);
+  font-size: 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-item-prototype .live-nav-dot {
+  margin-left: 0;
+}
+
 .sport-rail {
   display: grid;
   gap: 2px;

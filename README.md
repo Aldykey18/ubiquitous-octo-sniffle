@@ -1,6 +1,6 @@
 # ValueBet Radar
 
-Prototype d'interface 3D pour filtrer les meilleurs pronostics du jour et séparer les sélections **pré-match** du futur coupon **live**.
+Prototype d'interface 3D centré sur les meilleurs pronostics **pré-match** du jour. Le module **live** reste volontairement secondaire, en aperçu jusqu'à la connexion d'une source vérifiée.
 
 ## Lancer localement
 
@@ -20,7 +20,8 @@ Puis ouvrir `http://localhost:4173`.
 - calcul automatique de la probabilité implicite, de l'EV, de la cote combinée et de la probabilité indépendante ;
 - coupon maître interactif : ajout/retrait de jambes, retrait des 3 jambes fragiles et copie du coupon ;
 - fiche d'analyse détaillée pour chaque sélection ;
-- espace `Live radar` séparé avec coupon conditionnel et avertissement explicite de mode démo tant qu'aucun fournisseur de scores/cotes vérifié n'est connecté ;
+- ouverture par défaut sur la shortlist `Pré-match` ;
+- espace `Live radar` séparé, secondaire, avec coupon conditionnel et avertissement explicite de mode démo tant qu'aucun fournisseur de scores/cotes vérifié n'est connecté ;
 - responsive desktop, tablette et mobile.
 
 Les données de `app.js` reprennent le snapshot du 25 septembre 2026 fourni dans le brief. Les cotes, compositions, statuts, horaires et marchés doivent être revalidés avant toute utilisation. L'application ne place aucun pari et ne garantit aucun résultat.

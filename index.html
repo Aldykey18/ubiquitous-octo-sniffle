@@ -32,19 +32,20 @@
 
         <div class="sidebar-section-label">Navigation</div>
         <nav class="side-nav" aria-label="Navigation principale">
-          <button class="nav-item active" data-view="dashboard" type="button">
+          <button class="nav-item" data-view="dashboard" type="button">
             <span class="nav-icon icon-grid" aria-hidden="true"></span>
             <span>Vue d'ensemble</span>
             <span class="nav-pulse"></span>
           </button>
-          <button class="nav-item" data-view="prematch" type="button">
+          <button class="nav-item active" data-view="prematch" type="button">
             <span class="nav-icon icon-target" aria-hidden="true"></span>
             <span>Pré-match</span>
             <span class="nav-count">12</span>
           </button>
-          <button class="nav-item" data-view="live" type="button">
+          <button class="nav-item nav-item-prototype" data-view="live" type="button">
             <span class="nav-icon icon-signal" aria-hidden="true"></span>
             <span>Live radar</span>
+            <small>prototype</small>
             <span class="live-nav-dot"></span>
           </button>
         </nav>
@@ -94,7 +95,7 @@
 
       <main class="main-content">
         <header class="topbar">
-          <div class="breadcrumb"><span>VALUEBET</span><b>/</b><span id="topbarContext">TODAY'S BOARD</span></div>
+          <div class="breadcrumb"><span>VALUEBET</span><b>/</b><span id="topbarContext">PRE-MATCH SHORTLIST</span></div>
           <div class="topbar-actions">
             <div class="data-status"><span class="status-dot amber"></span><span>Snapshot vérifié</span></div>
             <button class="icon-button" id="refreshButton" type="button" aria-label="Actualiser le snapshot" title="Actualiser le snapshot">
@@ -107,9 +108,9 @@
 
         <div class="page-heading">
           <div>
-            <div class="eyebrow"><span class="eyebrow-line"></span><span id="pageKicker">NEURAL PICK ENGINE · 25 SEPTEMBRE 2026</span></div>
-            <h1 id="pageTitle">Seuls les écarts qui comptent.</h1>
-            <p id="pageSubtitle">Le board du jour, filtré par value, fiabilité et stabilité du marché.</p>
+            <div class="eyebrow"><span class="eyebrow-line"></span><span id="pageKicker">PRÉ-MATCH ENGINE · 25 SEPTEMBRE 2026</span></div>
+            <h1 id="pageTitle">Les prix qui ont passé le filtre.</h1>
+            <p id="pageSubtitle">La shortlist pré-match du jour, filtrée par value, fiabilité et stabilité du marché.</p>
           </div>
           <div class="heading-date">
             <span class="calendar-glyph">▦</span>
@@ -119,7 +120,7 @@
 
         <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-        <section class="view active" id="dashboardView" data-view-panel="dashboard">
+        <section class="view" id="dashboardView" data-view-panel="dashboard">
           <section class="hero-panel">
             <div class="hero-copy">
               <div class="hero-label"><span class="signal-bars"><i></i><i></i><i></i></span> SIGNAL DU JOUR <span class="hero-label-divider"></span> 09:42 UTC</div>
@@ -172,7 +173,7 @@
             <aside class="dashboard-side">
               <section class="coupon-card" id="dashboardCoupon"></section>
               <section class="micro-panel live-glimpse">
-                <div class="micro-panel-heading"><div><span class="section-kicker">WATCHLIST</span><h3>Radar live</h3></div><span class="live-pill"><i></i> EN ATTENTE</span></div>
+                <div class="micro-panel-heading"><div><span class="section-kicker">FUTUR MODULE</span><h3>Radar live · prototype</h3></div><span class="live-pill"><i></i> EN ATTENTE</span></div>
                 <div class="live-glimpse-body"><div class="live-radar-mini"><span class="radar-sweep"></span><span class="radar-dot dot-1"></span><span class="radar-dot dot-2"></span><span class="radar-dot dot-3"></span></div><div><strong>Flux à connecter</strong><p>Le coupon conditionnel s'active dès qu'un score live vérifié est disponible.</p></div></div>
                 <button class="full-width-button" data-view="live" type="button">Ouvrir le live radar <span>→</span></button>
               </section>
@@ -180,10 +181,10 @@
           </div>
         </section>
 
-        <section class="view" id="prematchView" data-view-panel="prematch">
+        <section class="view active" id="prematchView" data-view-panel="prematch">
           <div class="subview-head">
             <div><div class="eyebrow"><span class="eyebrow-line"></span> PRÉ-MATCH / SHORTLIST DU JOUR</div><h2>Les prix qui ont passé le filtre.</h2><p>Un pick n'apparaît ici que si sa value, son contexte et la fiabilité de ses données sont défendables.</p></div>
-            <div class="subview-badge"><span class="status-dot green"></span> Filtre premium actif</div>
+            <div class="subview-badge"><span class="status-dot green"></span> Focus pré-match · filtre premium actif</div>
           </div>
           <div class="control-bar">
             <div class="filter-group" role="group" aria-label="Filtrer par sport"><button class="filter-chip active" data-filter="Tous" type="button">Tous <span>12</span></button><button class="filter-chip" data-filter="MLB" type="button">MLB <span>04</span></button><button class="filter-chip" data-filter="WNBA" type="button">WNBA <span>04</span></button><button class="filter-chip" data-filter="Football" type="button">Football <span>02</span></button><button class="filter-chip" data-filter="Tennis" type="button">Tennis <span>02</span></button></div>
@@ -193,7 +194,7 @@
         </section>
 
         <section class="view" id="liveView" data-view-panel="live">
-          <div class="live-header-panel"><div><div class="eyebrow"><span class="eyebrow-line live-line"></span> LIVE RADAR / COUPON CONDITIONNEL</div><h2>Le match bouge. Le modèle aussi.</h2><p>La logique est prête pour un flux de scores, chronomètre, possessions et cotes live vérifiées.</p></div><div class="feed-status"><span class="status-dot amber"></span><div><strong>Flux live non connecté</strong><small>Mode interface / données de démonstration</small></div></div></div>
+          <div class="live-header-panel"><div><div class="eyebrow"><span class="eyebrow-line live-line"></span> MODULE SECONDAIRE · LIVE RADAR / PROTOTYPE</div><h2>Le pré-match reste prioritaire.</h2><p>Le radar live est conservé comme aperçu technique. La version actuelle concentre les sélections, analyses et coupons sur les matchs à venir.</p></div><div class="feed-status"><span class="status-dot amber"></span><div><strong>Flux live non connecté</strong><small>Module secondaire / données de démonstration</small></div></div></div>
           <div class="prototype-warning"><span class="warning-icon">!</span><div><strong>Mode prototype — aucune ligne live réelle n'est active.</strong><p>Les rencontres ci-dessous montrent le format du futur coupon. Ne pas les interpréter comme des conseils actuels tant qu'une source live vérifiée n'est pas branchée.</p></div><button class="small-ghost" id="connectFeedButton" type="button">Préparer la connexion</button></div>
           <div class="live-layout"><section class="panel live-board"><div class="panel-heading"><div><div class="section-kicker">LIVE OPPORTUNITIES <span class="amber-dot"></span></div><h2>Signaux conditionnels <span>· démo</span></h2></div><span class="refresh-caption">mise à jour simulée · 14 s</span></div><div id="livePicks" class="live-picks"></div></section><aside class="live-aside"><section class="coupon-card live-coupon" id="liveCoupon"></section><section class="live-rules"><div class="section-kicker">RÈGLES LIVE</div><div class="rule-item"><span>01</span><p>Attendre 3–5 minutes de données stables avant toute lecture.</p></div><div class="rule-item"><span>02</span><p>Jamais de poursuite de pertes ni de doublement automatique.</p></div><div class="rule-item"><span>03</span><p>Annuler le signal si la cote ou le contexte change.</p></div></section></aside></div>
         </section>

@@ -281,7 +281,7 @@ const livePicks = [
   },
 ];
 
-let activeView = "dashboard";
+let activeView = "prematch";
 let activeFilter = "Tous";
 let onlyPremium = true;
 let sortBy = "score";
@@ -644,6 +644,7 @@ function init() {
   renderAllCoupons();
   renderLivePicks();
   bindEvents();
+  setView("prematch");
 }
 
 document.addEventListener("DOMContentLoaded", init);
