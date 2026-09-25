@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b15" />
+    <meta
+      name="description"
+      content="ValueBet Radar — tableau de bord 3D des meilleures prédictions sportives du jour."
+    />
+    <title>ValueBet Radar — les meilleurs signaux du jour</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="ambient ambient-three"></div>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">
+            <span class="brand-mark-core"></span>
+            <span class="brand-mark-ring ring-one"></span>
+            <span class="brand-mark-ring ring-two"></span>
+          </div>
+          <div>
+            <div class="brand-name">VALUE<span>BET</span></div>
+            <div class="brand-subtitle">radar / v1.0</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section-label">Navigation</div>
+        <nav class="side-nav" aria-label="Navigation principale">
+          <button class="nav-item" data-view="dashboard" type="button">
+            <span class="nav-icon icon-grid" aria-hidden="true"></span>
+            <span>Vue d'ensemble</span>
+            <span class="nav-pulse"></span>
+          </button>
+          <button class="nav-item active" data-view="prematch" type="button">
+            <span class="nav-icon icon-target" aria-hidden="true"></span>
+            <span>Pré-match</span>
+            <span class="nav-count">12</span>
+          </button>
+          <button class="nav-item nav-item-prototype" data-view="live" type="button">
+            <span class="nav-icon icon-signal" aria-hidden="true"></span>
+            <span>Live radar</span>
+            <small>prototype</small>
+            <span class="live-nav-dot"></span>
+          </button>
+        </nav>
+
+        <div class="sidebar-section-label sidebar-label-spaced">Univers suivis</div>
+        <div class="sport-rail">
+          <button class="sport-rail-item" data-filter="MLB" type="button">
+            <span class="rail-sport-icon baseball-icon">◆</span>
+            <span>MLB</span>
+            <span class="rail-value">04</span>
+          </button>
+          <button class="sport-rail-item" data-filter="WNBA" type="button">
+            <span class="rail-sport-icon basketball-icon">◉</span>
+            <span>WNBA</span>
+            <span class="rail-value">04</span>
+          </button>
+          <button class="sport-rail-item" data-filter="Football" type="button">
+            <span class="rail-sport-icon football-icon">⬡</span>
+            <span>Football</span>
+            <span class="rail-value">02</span>
+          </button>
+          <button class="sport-rail-item" data-filter="Tennis" type="button">
+            <span class="rail-sport-icon tennis-icon">✳</span>
+            <span>Tennis</span>
+            <span class="rail-value">02</span>
+          </button>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="bankroll-card">
+            <div class="bankroll-heading">
+              <span class="status-dot green"></span>
+              <span>Gestion prudente</span>
+              <span class="info-dot">i</span>
+            </div>
+            <div class="bankroll-value">0,10<span>%</span></div>
+            <div class="bankroll-caption">mise max. recommandée</div>
+            <div class="bankroll-bar"><span></span></div>
+            <div class="bankroll-foot"><span>Risque global</span><strong>Très haut</strong></div>
+          </div>
+          <div class="sidebar-footer">
+            <span class="tiny-orbit"></span>
+            <span>Snapshot 25.09.2026</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><span>VALUEBET</span><b>/</b><span id="topbarContext">PRE-MATCH SHORTLIST</span></div>
+          <div class="topbar-actions">
+            <div class="data-status"><span class="status-dot amber"></span><span>Snapshot vérifié</span></div>
+            <button class="icon-button" id="refreshButton" type="button" aria-label="Actualiser le snapshot" title="Actualiser le snapshot">
+              <span class="refresh-icon">↻</span>
+            </button>
+            <button class="avatar-button" type="button" aria-label="Profil">A</button>
+            <button class="mobile-menu-button" id="menuToggle" type="button" aria-label="Ouvrir le menu">☰</button>
+          </div>
+        </header>
+
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span><span id="pageKicker">PRÉ-MATCH ENGINE · 25 SEPTEMBRE 2026</span></div>
+            <h1 id="pageTitle">Les prix qui ont passé le filtre.</h1>
+            <p id="pageSubtitle">La shortlist pré-match du jour, filtrée par value, fiabilité et stabilité du marché.</p>
+          </div>
+          <div class="heading-date">
+            <span class="calendar-glyph">▦</span>
+            <div><strong>Vendredi</strong><span>25 septembre 2026</span></div>
+          </div>
+        </div>
+
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+        <section class="view" id="dashboardView" data-view-panel="dashboard">
+          <section class="hero-panel">
+            <div class="hero-copy">
+              <div class="hero-label"><span class="signal-bars"><i></i><i></i><i></i></span> SIGNAL DU JOUR <span class="hero-label-divider"></span> 09:42 UTC</div>
+              <h2>Le signal est rare.<br /><em>On garde le meilleur.</em></h2>
+              <p>54 événements scrutés. 39 marchés comparés. Seulement 12 sélections passent le filtre de qualité.</p>
+              <div class="hero-actions">
+                <button class="primary-button" data-view="prematch" type="button"><span>Explorer les sélections</span><b>↗</b></button>
+                <button class="text-button" data-view="live" type="button"><span class="live-button-dot"></span> Voir le radar live</button>
+              </div>
+              <div class="hero-footnote"><span class="lock-icon">⌁</span> Aucune garantie. Les prix doivent être revalidés avant toute décision.</div>
+            </div>
+            <div class="hero-visual" aria-label="Visualisation 3D du signal global">
+              <div class="visual-grid"></div>
+              <div class="orbit-scene">
+                <div class="orbit-ring orbit-ring-a"></div>
+                <div class="orbit-ring orbit-ring-b"></div>
+                <div class="orbit-ring orbit-ring-c"></div>
+                <div class="orbit-node node-a"><span></span></div>
+                <div class="orbit-node node-b"><span></span></div>
+                <div class="orbit-node node-c"><span></span></div>
+                <div class="hero-orb">
+                  <div class="orb-grid"></div>
+                  <div class="orb-shine"></div>
+                  <div class="orb-content"><strong>84</strong><span>/ 100</span><small>signal global</small></div>
+                </div>
+                <div class="floating-chip chip-ev"><span class="chip-icon">↗</span><span><b>+13,7%</b><small>EV médiane</small></span></div>
+                <div class="floating-chip chip-picks"><span class="chip-icon">✦</span><span><b>12 picks</b><small>retenus</small></span></div>
+                <div class="floating-chip chip-sports"><span class="chip-icon">◌</span><span><b>04 sports</b><small>couverts</small></span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="metric-row" aria-label="Résumé du snapshot">
+            <div class="metric-card metric-highlight"><div class="metric-icon">◈</div><div><span>Événements analysés</span><strong>54</strong></div><small>tous sports</small></div>
+            <div class="metric-card"><div class="metric-icon purple">⌁</div><div><span>Marchés candidats</span><strong>39</strong></div><small>comparés</small></div>
+            <div class="metric-card"><div class="metric-icon orange">✦</div><div><span>Picks retenus</span><strong>12</strong></div><small>score ≥ 70</small></div>
+            <div class="metric-card"><div class="metric-icon green">↗</div><div><span>Qualité moyenne</span><strong>77,8</strong></div><small>sur 100</small></div>
+          </section>
+
+          <div class="dashboard-grid">
+            <section class="panel picks-panel">
+              <div class="panel-heading">
+                <div><div class="section-kicker">SHORTLIST PREMIUM <span class="green-dot"></span></div><h2>Top picks <span>· avant-match</span></h2></div>
+                <button class="outline-button" data-view="prematch" type="button">Voir les 12 <span>↗</span></button>
+              </div>
+              <div class="dashboard-picks" id="dashboardPicks"></div>
+              <div class="panel-note"><span class="sparkle">✦</span> Affichage limité aux signaux les plus robustes. Les jambes fragiles restent visibles dans le coupon maître.</div>
+            </section>
+
+            <aside class="dashboard-side">
+              <section class="coupon-card" id="dashboardCoupon"></section>
+              <section class="micro-panel live-glimpse">
+                <div class="micro-panel-heading"><div><span class="section-kicker">FUTUR MODULE</span><h3>Radar live · prototype</h3></div><span class="live-pill"><i></i> EN ATTENTE</span></div>
+                <div class="live-glimpse-body"><div class="live-radar-mini"><span class="radar-sweep"></span><span class="radar-dot dot-1"></span><span class="radar-dot dot-2"></span><span class="radar-dot dot-3"></span></div><div><strong>Flux à connecter</strong><p>Le coupon conditionnel s'active dès qu'un score live vérifié est disponible.</p></div></div>
+                <button class="full-width-button" data-view="live" type="button">Ouvrir le live radar <span>→</span></button>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view active" id="prematchView" data-view-panel="prematch">
+          <div class="subview-head">
+            <div><div class="eyebrow"><span class="eyebrow-line"></span> PRÉ-MATCH / SHORTLIST DU JOUR</div><h2>Les prix qui ont passé le filtre.</h2><p>Un pick n'apparaît ici que si sa value, son contexte et la fiabilité de ses données sont défendables.</p></div>
+            <div class="subview-badge"><span class="status-dot green"></span> Focus pré-match · filtre premium actif</div>
+          </div>
+          <div class="control-bar">
+            <div class="filter-group" role="group" aria-label="Filtrer par sport"><button class="filter-chip active" data-filter="Tous" type="button">Tous <span>12</span></button><button class="filter-chip" data-filter="MLB" type="button">MLB <span>04</span></button><button class="filter-chip" data-filter="WNBA" type="button">WNBA <span>04</span></button><button class="filter-chip" data-filter="Football" type="button">Football <span>02</span></button><button class="filter-chip" data-filter="Tennis" type="button">Tennis <span>02</span></button></div>
+            <div class="sort-controls"><label class="switch-label"><input type="checkbox" id="premiumToggle" checked /><span class="switch"></span><span>Seulement score ≥ 78</span></label><label class="select-wrap"><span>Trier par</span><select id="sortSelect"><option value="score">Score expert</option><option value="ev">EV décroissante</option><option value="odds">Cote décroissante</option></select></label></div>
+          </div>
+          <div class="prematch-layout"><section class="panel picks-panel full-picks-panel"><div class="list-header"><div><span class="section-kicker">12 SÉLECTIONS VALIDÉES</span><h3 id="prematchListTitle">Les meilleurs signaux, sans bruit.</h3></div><div class="list-legend"><span><i class="legend-dot strong"></i> Premium</span><span><i class="legend-dot watch"></i> À surveiller</span></div></div><div id="prematchPicks" class="prematch-picks"></div><div class="data-note"><span>i</span><p><strong>Lecture responsable :</strong> probabilité implicite = 1 / cote. EV = (probabilité modèle × cote) − 1. Une EV positive n'est pas une garantie de gain.</p></div></section><aside class="prematch-aside"><section class="coupon-card" id="prematchCoupon"></section><section class="method-card"><div class="section-kicker">MÉTHODE</div><h3>Pourquoi ces picks ?</h3><div class="method-line"><span class="method-number">01</span><div><strong>Stats officielles</strong><p>Forme, matchup, contexte et absences quand elles sont vérifiables.</p></div></div><div class="method-line"><span class="method-number">02</span><div><strong>Prix comparés</strong><p>La value n'existe que si le prix affiché tient encore au moment du pari.</p></div></div><div class="method-line"><span class="method-number">03</span><div><strong>Risque plafonné</strong><p>0,10 % de bankroll maximum sur le combiné très volatil.</p></div></div></section></aside></div>
+        </section>
+
+        <section class="view" id="liveView" data-view-panel="live">
+          <div class="live-header-panel"><div><div class="eyebrow"><span class="eyebrow-line live-line"></span> MODULE SECONDAIRE · LIVE RADAR / PROTOTYPE</div><h2>Le pré-match reste prioritaire.</h2><p>Le radar live est conservé comme aperçu technique. La version actuelle concentre les sélections, analyses et coupons sur les matchs à venir.</p></div><div class="feed-status"><span class="status-dot amber"></span><div><strong>Flux live non connecté</strong><small>Module secondaire / données de démonstration</small></div></div></div>
+          <div class="prototype-warning"><span class="warning-icon">!</span><div><strong>Mode prototype — aucune ligne live réelle n'est active.</strong><p>Les rencontres ci-dessous montrent le format du futur coupon. Ne pas les interpréter comme des conseils actuels tant qu'une source live vérifiée n'est pas branchée.</p></div><button class="small-ghost" id="connectFeedButton" type="button">Préparer la connexion</button></div>
+          <div class="live-layout"><section class="panel live-board"><div class="panel-heading"><div><div class="section-kicker">LIVE OPPORTUNITIES <span class="amber-dot"></span></div><h2>Signaux conditionnels <span>· démo</span></h2></div><span class="refresh-caption">mise à jour simulée · 14 s</span></div><div id="livePicks" class="live-picks"></div></section><aside class="live-aside"><section class="coupon-card live-coupon" id="liveCoupon"></section><section class="live-rules"><div class="section-kicker">RÈGLES LIVE</div><div class="rule-item"><span>01</span><p>Attendre 3–5 minutes de données stables avant toute lecture.</p></div><div class="rule-item"><span>02</span><p>Jamais de poursuite de pertes ni de doublement automatique.</p></div><div class="rule-item"><span>03</span><p>Annuler le signal si la cote ou le contexte change.</p></div></section></aside></div>
+        </section>
+
+        <footer class="app-footer"><span>VALUEBET RADAR / snapshot interne</span><span>Les données doivent être revalidées juste avant toute prise de pari · aucune garantie</span><span>v1.0.0</span></footer>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <section class="detail-modal" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Fermer">×</button>
+      <div id="modalContent"></div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
