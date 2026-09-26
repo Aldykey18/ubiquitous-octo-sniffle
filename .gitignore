@@ -79,6 +79,20 @@ vcs.xml
 
 # lint
 lint/intermediates/
+
+# ---------- Node / Next.js (Value Bet Master AI) ----------
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.env
+.env.local
+.env.*.local
+
+# Données d'exécution générées (état du moteur, snapshots)
+data/runtime/
+
 lint/generated/
 lint/outputs/
 lint/tmp/
